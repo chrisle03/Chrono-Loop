@@ -2,7 +2,7 @@
 
 A real-time granular audio processor implementing Ben Ward's granulation algorithm, optimized for the Bela embedded audio platform.
 
-## 🎵 Overview
+## Overview
 
 Chrono-Loop is a hardware-based granular synthesis processor that transforms audio in real-time. It loads an audio file and chops it into tiny "grains" (10-100ms fragments), which are then replayed with controllable timing, pitch, and envelope shaping to create rich, evolving textures.
 
@@ -13,7 +13,7 @@ Chrono-Loop is a hardware-based granular synthesis processor that transforms aud
 -  **Ultra-low latency** (<5ms on Bela)
 -  **Memory optimized** (92% reduction from original)
 
-## 🔧 Hardware Requirements
+## Hardware Requirements
 
 - **Bela board** (Bela, Bela Mini, or BeagleBone with Bela cape)
 - **4 × Potentiometers** (10kΩ recommended)
@@ -21,7 +21,7 @@ Chrono-Loop is a hardware-based granular synthesis processor that transforms aud
 - **Audio output** (speakers or headphones)
 - **Audio file** (.wav format, 44.1kHz recommended)
 
-## 📋 Quick Start
+## Quick Start
 
 ### 1. Hardware Setup
 
@@ -72,7 +72,7 @@ Adjust the 4 potentiometers to control the granulation:
 - **Pot 2 (Playback Rate)**: Speed through source file (0-2x)
 - **Pot 3 (Window Alpha)**: Envelope smoothness (0.0-1.0)
 
-## 🎚️ Parameter Guide
+## Parameter Guide
 
 ### Grain Size (Pot 0)
 Controls the length of each grain
@@ -102,7 +102,7 @@ Controls envelope shape (fade in/out amount)
 - **30-70%**: Balanced smoothness
 - **70-100%**: Ultra-smooth, no clicks at all
 
-## 🏗️ Architecture
+## Architecture
 
 ### File Structure
 
@@ -134,7 +134,7 @@ Granulator Engine
 Audio Output → Speakers
 ```
 
-## 🎓 Technical Details
+## Technical Details
 
 ### Algorithm
 
@@ -158,7 +158,7 @@ Audio Output → Speakers
 **Optimized Version**: 275 KB (16 grains × 4,410 samples)  
 **Reduction**: 92% smaller while maintaining audio quality 
 
-## 🎛️ Parameter Mapping Details
+## Parameter Mapping Details
 
 ### Grain Size
 ```cpp
@@ -188,7 +188,7 @@ Mapping: Direct
 Formula: potValue (clamped to 0.01-1.0)
 ```
 
-## 🧮 The Tunable Cosine Window
+## The Tunable Cosine Window
 
 The signature feature of this granulator is the **tunable cosine window envelope**:
 
@@ -212,7 +212,7 @@ else
 
 This provides user control over envelope smoothness, distinguishing it from fixed-window granulators.
 
-## 🎯 Usage Examples
+## Usage Examples
 
 ### Ambient Texture
 ```
@@ -244,7 +244,7 @@ Window Alpha:   80% (smooth)
 Result: High-pitched, shimmering texture
 ```
 
-## 📖 Code Overview
+## Code Overview
 
 ### BenWardGranulatorOptimized.h
 Defines the granulator class with:
@@ -268,7 +268,7 @@ Bela application that:
 - Calls granulator with smoothed parameters
 - Outputs to speakers
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### No Sound
 - Check audio file loaded successfully (view Bela console)
